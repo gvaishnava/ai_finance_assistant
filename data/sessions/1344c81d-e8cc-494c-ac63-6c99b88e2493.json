@@ -1,0 +1,25 @@
+{
+  "session_id": "1344c81d-e8cc-494c-ac63-6c99b88e2493",
+  "created_at": "2026-02-01T22:05:00.471543",
+  "last_accessed": "2026-02-01T22:05:03.046204",
+  "messages": [
+    {
+      "role": "user",
+      "content": "What stocks did I just add?",
+      "timestamp": "2026-02-01T22:05:03.046161"
+    },
+    {
+      "role": "assistant",
+      "content": "I'd be happy to analyze your portfolio! Please provide your holdings information (stock symbols and quantities).",
+      "timestamp": "2026-02-01T22:05:03.046193",
+      "agent": "portfolio",
+      "metadata": {
+        "status": "awaiting_portfolio"
+      }
+    }
+  ],
+  "user_profile": {},
+  "portfolio": {},
+  "goals": [],
+  "state": {}
+}

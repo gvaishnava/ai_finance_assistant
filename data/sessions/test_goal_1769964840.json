@@ -1,0 +1,30 @@
+{
+  "session_id": "test_goal_1769964840",
+  "created_at": "2026-02-01T22:24:02.805022",
+  "last_accessed": "2026-02-01T22:25:00.357143",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Give me a roadmap to reach 1Cr for my retirement by 2045.",
+      "timestamp": "2026-02-01T22:25:00.357114"
+    },
+    {
+      "role": "assistant",
+      "content": "**Goal: Early Retirement Plan**\n\n- Target Amount: \u20b91.00 Cr\n- Current Amount: \u20b95.00 L\n- Remaining: \u20b995.00 L\n- Progress: 5.0%\n- Time Remaining: 242 months\n- Monthly Savings Needed: \u20b939.19K\n\n**Planning Insights:**\n\n\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-02-01T22:25:00.357135",
+      "agent": "goal_planning"
+    }
+  ],
+  "user_profile": {},
+  "portfolio": {},
+  "goals": [
+    {
+      "name": "Early Retirement Plan",
+      "goal_type": "retirement",
+      "target_amount": 10000000.0,
+      "target_date": "2045-12-31",
+      "current_amount": 500000.0
+    }
+  ],
+  "state": {}
+}

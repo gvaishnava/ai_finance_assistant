@@ -1,0 +1,30 @@
+{
+  "session_id": "test_goal_1769964578",
+  "created_at": "2026-02-01T22:19:40.936212",
+  "last_accessed": "2026-02-01T22:20:28.045647",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Give me a roadmap to reach 1Cr for my retirement by 2045.",
+      "timestamp": "2026-02-01T22:20:28.045607"
+    },
+    {
+      "role": "assistant",
+      "content": "\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-02-01T22:20:28.045636",
+      "agent": "goal_planning"
+    }
+  ],
+  "user_profile": {},
+  "portfolio": {},
+  "goals": [
+    {
+      "name": "Early Retirement Plan",
+      "goal_type": "retirement",
+      "target_amount": 10000000.0,
+      "target_date": "2045-12-31",
+      "current_amount": 500000.0
+    }
+  ],
+  "state": {}
+}

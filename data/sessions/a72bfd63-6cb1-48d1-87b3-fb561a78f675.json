@@ -1,0 +1,23 @@
+{
+  "session_id": "a72bfd63-6cb1-48d1-87b3-fb561a78f675",
+  "created_at": "2026-02-01T19:09:52.646126",
+  "last_accessed": "2026-02-01T19:09:55.407522",
+  "messages": [
+    {
+      "role": "user",
+      "content": "What is diversification?",
+      "timestamp": "2026-02-01T19:09:55.407501"
+    },
+    {
+      "role": "assistant",
+      "content": "I'd be happy to analyze your portfolio! Please provide your holdings information (stock symbols and quantities).",
+      "timestamp": "2026-02-01T19:09:55.407516",
+      "agent": "portfolio",
+      "metadata": {
+        "status": "awaiting_portfolio"
+      }
+    }
+  ],
+  "user_profile": {},
+  "state": {}
+}

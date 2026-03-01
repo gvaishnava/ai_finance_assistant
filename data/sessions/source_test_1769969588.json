@@ -1,0 +1,18 @@
+{
+  "session_id": "source_test_1769969588",
+  "created_at": "2026-02-01T23:43:13.589751",
+  "last_accessed": "2026-02-01T23:43:44.781558",
+  "messages": [],
+  "user_profile": {},
+  "portfolio": {
+    "holdings": [
+      {
+        "symbol": "RELIANCE.NS",
+        "quantity": 10.0,
+        "average_price": null
+      }
+    ]
+  },
+  "goals": [],
+  "state": {}
+}

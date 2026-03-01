@@ -34,10 +34,13 @@ env/
 *~
 
 # Data
-data/vector_store/
-data/sessions/
+# data/vector_store/  <-- Now including these
+# data/sessions/      <-- Now including these
 *.db
 *.sqlite
+
+# Large/Private Knowledge Base
+zerodha_course_on_stockmarket/
 
 # Logs
 *.log
