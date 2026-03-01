@@ -1,0 +1,133 @@
+# Configuration file for Financial AI Chatbot
+
+# Logging Settings
+logging:
+  level: "INFO"             # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  log_file: "logs/app.log"
+  max_bytes: 10485760       # 10 MB per file
+  backup_count: 5
+  json_file_logs: true      # Structured JSON in log file
+  color_console: true       # ANSI colors in terminal
+
+# LangSmith Tracing (set LANGCHAIN_TRACING_V2=true in .env to enable)
+langsmith:
+  project: "financial-ai-chatbot"   # Override with LANGCHAIN_PROJECT env var
+  endpoint_env: "LANGCHAIN_ENDPOINT"
+  api_key_env: "LANGCHAIN_API_KEY"
+
+# Application Settings
+app:
+  name: "AI Finance Assistant"
+  version: "1.0.0"
+  debug: true
+  host: "0.0.0.0"
+  port: 8000
+
+# LLM Configuration
+llm:
+  provider: openai # Options: gemini, openai
+  
+  gemini:
+    model: "gemini-2.0-flash"
+    temperature: 0.7
+    max_tokens: 2048
+    api_key_env: "GEMINI_API_KEY"  # Environment variable name
+    
+  openai:
+    model: "gpt-5-nano"
+    api_key_env: "OPENAI_API_KEY"
+    temperature: 1.0
+    max_tokens: 8192
+
+# Embedding Model (for RAG)
+embeddings:
+  provider: openai
+  model: "text-embedding-3-small"
+  chunk_size: 1000
+  chunk_overlap: 200
+
+# RAG Settings
+rag:
+  vector_store_path: "data/vector_store"
+  knowledge_base_path: "zerodha_course_on_stockmarket"
+  top_k: 5
+  similarity_threshold: 0.7
+
+# Agent Configuration
+agents:
+  finance_qa:
+    name: "Finance Q&A Agent"
+    description: "Handles general financial education queries"
+    system_prompt: "You are a friendly financial educator. Explain concepts clearly using simple language and examples."
+    temperature: 0.7  # Balanced - creative explanations but factual
+  
+  portfolio:
+    name: "Portfolio Analysis Agent"
+    description: "Reviews and analyzes user portfolios"
+    system_prompt: "You are a portfolio analyst educator. Help users understand their investments and diversification."
+    temperature: 0.5  # Lower - needs to be precise with numbers and analysis
+  
+  market:
+    name: "Market Analysis Agent"
+    description: "Provides real-time market insights"
+    system_prompt: "You are a market analysis educator. Explain market trends and movements in simple terms."
+    temperature: 0.6  # Medium-low - factual but can explain patterns creatively
+  
+  goal_planning:
+    name: "Goal Planning Agent"
+    description: "Assists with financial goal setting"
+    system_prompt: "You are a financial planning educator. Help users set and work toward financial goals."
+    temperature: 0.7  # Balanced - needs to be motivating yet precise
+  
+  news:
+    name: "News Synthesizer Agent"
+    description: "Summarizes financial news"
+    system_prompt: "You are a financial news educator. Summarize and explain news in an accessible way."
+    temperature: 0.8  # Higher - benefits from creative explanations and analogies
+  
+  tax:
+    name: "Tax Education Agent"
+    description: "Explains tax concepts"
+    system_prompt: "You are a tax education specialist. Explain tax concepts but always recommend professional advice."
+    temperature: 0.4  # Lowest - must be very precise and factual about tax rules
+  
+  ticker_resolver:
+    name: "Ticker Resolver Agent"
+    description: "Resolves company names and indices to exact stock ticker symbols"
+    system_prompt: |
+      You are a stock ticker resolution specialist. Your goal is to identify the most accurate Yahoo Finance (yfinance) ticker symbols for companies, indices, or financial instruments mentioned in the query.
+      
+      Rules:
+      1. Prefer Indian exchanges: Use .NS (NSE) or .BO (BSE) suffixes for Indian stocks.
+      2. If multiple symbols exist, prioritize the one on the major exchange (NSE).
+      3. For global stocks, use standard tickers (e.g., AAPL, MSFT, TSLA).
+      4. For indices, use their standard symbols (e.g., ^NSEI for Nifty 50, ^BSESN for Sensex).
+      5. Respond with a JSON object containing a list of strings: {"symbols": ["TICKER1", "TICKER2"]}.
+      6. If no ticker is found, return an empty list: {"symbols": []}.
+      7. Be precise. Do not include common words as tickers.
+    temperature: 0.1  # Very low for high precision
+
+# LangGraph Workflow
+workflow:
+  max_iterations: 10
+  enable_supervisor: true
+  supervisor_model: "gemini-2.0-flash"
+
+# Market Data (yfinance)
+market_data:
+  cache_duration: 300  # seconds
+  default_period: "1mo"
+  default_interval: "1d"
+
+# Session Management
+session:
+  storage: "file"  # file or memory
+  storage_path: "data/sessions"
+  expiry: 86400  # 24 hours in seconds
+
+# Disclaimers
+disclaimers:
+  general: "This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions."
+  tax: "This is general tax education only. Tax situations vary by individual. Please consult a tax professional for personalized advice."
+  portfolio: "This analysis is educational. It does not constitute investment advice or recommendations."
+

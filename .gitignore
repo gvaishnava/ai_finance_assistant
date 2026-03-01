@@ -1,0 +1,68 @@
+# Created by Antigravity
+.env
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Data
+data/vector_store/
+data/sessions/
+*.db
+*.sqlite
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+
+# Scripts and Temporary Files
+debug_*.py
+verify_*.py
+reproduce_*.py
+diag_persistence.py
+list_models.py
+test_api.ps1
+*.rar
+!verify_ticker_agent.py # If you want to keep this one specifically, but user said skip verify
+!verify_ticker_fix.py
+
+# Task management
+.gemini/
+brain/

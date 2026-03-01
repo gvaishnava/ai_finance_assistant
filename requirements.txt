@@ -1,0 +1,54 @@
+# Core Python
+# python>=3.10
+
+# Google Gemini
+google-genai
+
+# Search
+tavily-python>=0.3.0
+
+# OpenAI
+openai>=1.0.0
+langchain-openai>=0.0.5
+
+# LangChain & LangGraph
+langchain>=0.1.0
+langchain-google-genai>=0.0.5
+langgraph>=0.0.20
+langchain-community>=0.0.13
+
+# LangSmith Tracing
+langsmith>=0.1.0
+
+# Vector Database
+faiss-cpu>=1.7.4
+
+# PDF Processing
+pypdf>=3.17.0
+pypdf2>=3.0.0
+pdfplumber>=0.10.0
+
+# Market Data
+yfinance>=0.2.32
+
+# Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Web Framework
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+python-multipart>=0.0.6
+websockets>=12.0
+
+# Utilities
+python-dotenv>=1.0.0
+pyyaml>=6.0
+requests>=2.31.0
+aiofiles>=23.2.1
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.23.0
+pytest-cov>=4.1.0
+httpx>=0.25.0
