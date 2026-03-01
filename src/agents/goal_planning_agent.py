@@ -8,6 +8,7 @@ from datetime import datetime
 from src.agents.base_agent import BaseAgent
 from src.utils.formatters import format_currency
 from src.utils.logger import get_logger
+from src.utils.tracing import traceable, atraceable
 from src.utils.visualizers import get_goal_projection_chart, get_goals_summary_chart
 
 logger = get_logger(__name__)
@@ -23,6 +24,7 @@ class GoalPlanningAgent(BaseAgent):
             use_rag=True
         )
     
+    @traceable(name="goal_planning_agent_process", tags=["agent", "goals"])
     def process(
         self,
         query: str,
@@ -222,6 +224,7 @@ Make it practical and actionable for beginners."""
 
     # ── Asynchronous ──────────────────────────────────────────────────────────
 
+    @atraceable(name="goal_planning_agent_async_process", tags=["agent", "goals", "async"])
     async def async_process(
         self,
         query: str,

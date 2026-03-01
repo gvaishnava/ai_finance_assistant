@@ -8,6 +8,7 @@ from src.agents.base_agent import BaseAgent
 from src.data.market_data import get_market_client
 from src.utils.formatters import format_currency, format_percentage
 from src.utils.logger import get_logger
+from src.utils.tracing import traceable, atraceable
 from src.utils.visualizers import get_market_history_chart
 
 logger = get_logger(__name__)
@@ -24,6 +25,7 @@ class MarketAgent(BaseAgent):
         )
         self.market_client = get_market_client(config_path)
     
+    @traceable(name="market_agent_process", tags=["agent", "market"])
     def process(
         self,
         query: str,

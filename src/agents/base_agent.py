@@ -56,6 +56,7 @@ class BaseAgent:
 
     # ── Synchronous interface ─────────────────────────────────────────────────
 
+    @traceable(name="base_agent_process", tags=["agent"])
     def process(
         self,
         query: str,
@@ -111,6 +112,7 @@ class BaseAgent:
 
     # ── Asynchronous interface ────────────────────────────────────────────────
 
+    @atraceable(name="base_agent_async_process", tags=["agent", "async"])
     async def async_process(
         self,
         query: str,

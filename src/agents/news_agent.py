@@ -25,6 +25,7 @@ class NewsSynthesizerAgent(BaseAgent):
         if not self.tavily_client:
             logger.warning("TAVILY_API_KEY not found. Live news search will be disabled.")
     
+    @traceable(name="news_agent_process", tags=["agent", "news"])
     def process(
         self,
         query: str,
@@ -143,6 +144,7 @@ Use simple language and include examples where helpful."""
 
     # ── Asynchronous ──────────────────────────────────────────────────────────
 
+    @atraceable(name="news_agent_async_process", tags=["agent", "news", "async"])
     async def async_process(
         self,
         query: str,
@@ -195,6 +197,7 @@ Please:
 5. Clarify what this means in layman's terms
 
 Focus on education and helping users understand, not on making predictions."""
+        response = await self.async_generate_response(prompt, edu_context)
         # Simulate a sentiment score for educational demonstration
         sentiment_score = 0.5 if "positive" in response.lower() or "gain" in response.lower() else -0.2
         visualizations = [get_news_impact_chart(sentiment_score)]

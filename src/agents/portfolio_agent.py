@@ -8,6 +8,7 @@ from src.agents.base_agent import BaseAgent
 from src.data.portfolio import Portfolio
 from src.utils.formatters import format_currency, format_percentage
 from src.utils.logger import get_logger
+from src.utils.tracing import traceable, atraceable
 from src.utils.visualizers import get_portfolio_allocation_chart, get_sector_allocation_chart
 
 logger = get_logger(__name__)
@@ -23,6 +24,7 @@ class PortfolioAgent(BaseAgent):
             use_rag=True  # Use RAG for educational context
         )
     
+    @traceable(name="portfolio_agent_process", tags=["agent", "portfolio"])
     def process(
         self,
         query: str,
@@ -154,6 +156,7 @@ Remember: Provide education, not specific investment advice."""
 
     # ── Asynchronous ──────────────────────────────────────────────────────────
 
+    @atraceable(name="portfolio_agent_async_process", tags=["agent", "portfolio", "async"])
     async def async_process(
         self,
         query: str,

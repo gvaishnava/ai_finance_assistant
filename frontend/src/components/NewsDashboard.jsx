@@ -59,6 +59,8 @@ const NewsDashboard = () => {
         try {
             // Send to chat agent for synthesis
             const prompt = `Analyze this news article:\nTitle: ${article.title}\nContent: ${article.content}`;
+            const response = await sendMessage(prompt, 'news', { article_title: article.title });
+
             const assistantMsg = {
                 role: 'assistant',
                 content: response.response,

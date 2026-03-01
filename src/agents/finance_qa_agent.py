@@ -5,6 +5,7 @@ Finance Q&A Agent - Handles general financial education queries
 from typing import Dict, Optional
 from src.agents.base_agent import BaseAgent
 from src.utils.logger import get_logger
+from src.utils.tracing import traceable, atraceable
 
 logger = get_logger(__name__)
 
@@ -19,6 +20,7 @@ class FinanceQAAgent(BaseAgent):
             use_rag=True
         )
     
+    @traceable(name="finance_qa_agent_process", tags=["agent", "qa"])
     def process(
         self,
         query: str,
@@ -77,6 +79,7 @@ Include practical examples where relevant."""
 
     # ── Asynchronous ──────────────────────────────────────────────────────────
 
+    @atraceable(name="finance_qa_agent_async_process", tags=["agent", "qa", "async"])
     async def async_process(
         self,
         query: str,
