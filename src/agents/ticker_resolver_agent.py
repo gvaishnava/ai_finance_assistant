@@ -9,6 +9,7 @@ from typing import Dict, Optional, List
 from src.agents.base_agent import BaseAgent
 from src.utils.ticker_resolver import get_ticker_resolver
 from src.utils.logger import get_logger
+from src.utils.tracing import traceable, atraceable
 
 logger = get_logger(__name__)
 
@@ -20,6 +21,7 @@ class TickerResolverAgent(BaseAgent):
         super().__init__("ticker_resolver", config_path, use_rag=False)
         self.resolver = get_ticker_resolver()
         
+    @traceable(name="ticker_resolver_agent_process", tags=["agent", "ticker_resolution"])
     def process(self, query: str, context: Optional[Dict] = None, **kwargs) -> Dict:
         """
         Resolve tickers for query (synchronous)
@@ -89,6 +91,7 @@ Return an empty list if no clear ticker is found.
                 metadata={'symbols': [], 'error': str(e)}
             )
 
+    @atraceable(name="ticker_resolver_agent_async_process", tags=["agent", "ticker_resolution", "async"])
     async def async_process(self, query: str, context: Optional[Dict] = None, **kwargs) -> Dict:
         """Resolve tickers for query (asynchronous)"""
         # For now, we reuse the sync process in an executor as per BaseAgent implementation

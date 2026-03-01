@@ -18,6 +18,7 @@ from src.agents import (
     TickerResolverAgent
 )
 from src.utils.logger import get_logger
+from src.utils.tracing import traceable, atraceable
 
 logger = get_logger(__name__)
 
@@ -48,6 +49,7 @@ def get_agent(agent_name: str, config_path: str = "config.yaml"):
 
 # Node functions for the graph
 
+@traceable(name="workflow_route_node", tags=["workflow"])
 def route_query_node(state: ConversationState) -> ConversationState:
     """Route the query to appropriate agent"""
     logger.info(f"Routing query: {state['query'][:50]}...")
@@ -66,6 +68,7 @@ def route_query_node(state: ConversationState) -> ConversationState:
     logger.info(f"Selected agent: {selected_agent}")
     return state
 
+@traceable(name="workflow_process_node", tags=["workflow"])
 def process_with_agent_node(state: ConversationState) -> ConversationState:
     """Process query with the selected agent"""
     agent_name = state['selected_agent']
@@ -201,6 +204,7 @@ def run_workflow(
         raise
 
 
+@atraceable(name="financial_ai_workflow", tags=["workflow", "langgraph"])
 async def arun_workflow(
     query: str,
     session_id: str = None,

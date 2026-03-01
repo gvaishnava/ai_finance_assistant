@@ -5,6 +5,7 @@ Tax Education Agent - Explains tax concepts and account types
 from typing import Dict, Optional
 from src.agents.base_agent import BaseAgent
 from src.utils.logger import get_logger
+from src.utils.tracing import traceable, atraceable
 
 logger = get_logger(__name__)
 
@@ -19,6 +20,7 @@ class TaxEducationAgent(BaseAgent):
             use_rag=True
         )
     
+    @traceable(name="tax_agent_process", tags=["agent", "tax"])
     def process(
         self,
         query: str,
@@ -86,6 +88,7 @@ The information provided here is general in nature and may not apply to your spe
 
     # ── Asynchronous ──────────────────────────────────────────────────────────
 
+    @atraceable(name="tax_agent_async_process", tags=["agent", "tax", "async"])
     async def async_process(
         self,
         query: str,
