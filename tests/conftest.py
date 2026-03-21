@@ -11,11 +11,14 @@ except ImportError:
     sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     from src.web_app.api import app
 
+import httpx
+
 @pytest.fixture
 def anyio_backend():
     return 'asyncio'
 
 @pytest.fixture
 async def client():
-    async with AsyncClient(app=app, base_url="http://test") as c:
+    transport = httpx.ASGITransport(app=app)
+    async with AsyncClient(transport=transport, base_url="http://test") as c:
         yield c

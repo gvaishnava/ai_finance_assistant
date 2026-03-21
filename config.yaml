@@ -26,6 +26,7 @@ app:
 # LLM Configuration
 llm:
   provider: openai # Options: gemini, openai
+  fallback_provider: gemini # Secondary provider if primary fails
   
   gemini:
     model: "gemini-2.0-flash"

@@ -1,0 +1,843 @@
+{
+  "session_id": "integration_test",
+  "created_at": "2026-03-22T00:02:39.342316",
+  "last_accessed": "2026-03-22T00:41:14.684576",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:02:39.901783",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:02:39.901799",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:02:40.027370",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:02:40.027385",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:03:46.487788",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:03:46.487804",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:03:46.571967",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:03:46.571983",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:05:16.624032",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:05:16.624050",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:05:16.727229",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:05:16.727259",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:06:23.009071",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:06:23.009088",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:06:23.119888",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:06:23.119903",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:07:44.876956",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:07:44.876974",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:07:44.975314",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:07:44.975332",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:10:59.317353",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:10:59.317383",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:10:59.448160",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:10:59.448177",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:14:02.738491",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:14:02.738516",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:14:02.928028",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:14:02.928045",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:16:21.323815",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:16:21.323832",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:16:21.441434",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:16:21.441449",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:23:46.628914",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:23:46.628932",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:23:46.733339",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:23:46.733353",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:25:11.763973",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:25:11.764001",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:25:11.917402",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:25:11.917420",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:25:28.028812",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:25:28.028831",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:25:28.149550",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:25:28.149568",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:27:28.475136",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:27:28.475151",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:27:28.567676",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:27:28.567692",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:27:56.809934",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:27:56.809949",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:27:56.910298",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:27:56.910313",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:29:16.515496",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:29:16.515516",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:29:16.632400",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:29:16.632417",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:30:28.595917",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:30:28.595932",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:30:28.702843",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:30:28.702859",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:31:44.525115",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:31:44.525130",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:31:44.627341",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:31:44.627356",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:32:48.342553",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:32:48.342580",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:32:48.470694",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:32:48.470708",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:35:34.860419",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:35:34.860454",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:35:35.078218",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:35:35.078237",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:36:51.279301",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:36:51.279318",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:36:51.418729",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:36:51.418751",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:37:31.172406",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:37:31.172431",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:37:31.298099",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:37:31.298180",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:37:59.641809",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:37:59.641842",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:37:59.927508",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:37:59.927540",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:39:29.166374",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:39:29.166390",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:39:29.267431",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:39:29.267460",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:40:41.471260",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:40:41.471274",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:40:41.623281",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:40:41.623299",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Help",
+      "timestamp": "2026-03-22T00:41:14.549765",
+      "source": "goal_planning"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:41:14.549781",
+      "agent": "finance_qa",
+      "source": "goal_planning",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    },
+    {
+      "role": "user",
+      "content": "Hello",
+      "timestamp": "2026-03-22T00:41:14.684555",
+      "source": "chat"
+    },
+    {
+      "role": "assistant",
+      "content": "Async Mocked!\n\n---\n\n**Disclaimer:** This is educational content only, not financial advice. Please consult with a qualified financial advisor before making investment decisions.",
+      "timestamp": "2026-03-22T00:41:14.684571",
+      "agent": "finance_qa",
+      "source": "chat",
+      "metadata": {
+        "knowledge_level": "beginner",
+        "num_citations": 0
+      }
+    }
+  ],
+  "user_profile": {},
+  "portfolio": {
+    "holdings": [
+      {
+        "symbol": "AAPL",
+        "quantity": 10.0,
+        "average_price": 100.0
+      }
+    ]
+  },
+  "goals": [
+    {
+      "name": "House",
+      "goal_type": "Purchase",
+      "target_amount": 100000.0,
+      "target_date": "2030",
+      "current_amount": 10000.0
+    }
+  ],
+  "state": {}
+}

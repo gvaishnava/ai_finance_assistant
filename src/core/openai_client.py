@@ -65,31 +65,45 @@ class OpenAIClient:
         Returns:
             Generated response text
         """
-        try:
-            messages = []
-            if system_prompt:
-                messages.append({"role": "system", "content": system_prompt})
-            messages.append({"role": "user", "content": prompt})
+        import time
+        import random
 
-            # gpt-5-nano requires temperature=1
-            if self.model_name == "gpt-5-nano":
-                if (temperature or self.temperature) != 1:
-                    logger.warning(
-                        f"Model {self.model_name} requires temperature=1. Overriding."
-                    )
-                temperature = 1
+        messages = []
+        if system_prompt:
+            messages.append({"role": "system", "content": system_prompt})
+        messages.append({"role": "user", "content": prompt})
 
-            response = self.client.chat.completions.create(
-                model=self.model_name,
-                messages=messages,
-                temperature=temperature,
-                max_completion_tokens=max_tokens or self.max_tokens,
-            )
-            return response.choices[0].message.content
+        # gpt-5-nano requires temperature=1
+        if self.model_name == "gpt-5-nano":
+            if (temperature or self.temperature) != 1:
+                logger.warning(
+                    f"Model {self.model_name} requires temperature=1. Overriding."
+                )
+            temperature = 1
 
-        except Exception as e:
-            logger.error(f"Error generating OpenAI response: {e}")
-            raise
+        retries = 5
+        for attempt in range(retries):
+            try:
+                response = self.client.chat.completions.create(
+                    model=self.model_name,
+                    messages=messages,
+                    temperature=temperature,
+                    max_completion_tokens=max_tokens or self.max_tokens,
+                )
+                return response.choices[0].message.content
+            except Exception as e:
+                error_msg = str(e).lower()
+                if "429" in error_msg or "rate limit" in error_msg or "timeout" in error_msg or "503" in error_msg:
+                    if attempt < retries - 1:
+                        sleep_time = (5 * (2 ** attempt)) + (random.random() * 2)
+                        logger.warning(
+                            f"OpenAI error/rate limit hit. Retrying in {sleep_time:.2f}s "
+                            f"(Attempt {attempt + 1}/{retries})"
+                        )
+                        time.sleep(sleep_time)
+                        continue
+                logger.error(f"Error generating OpenAI response: {e}")
+                raise
 
     def generate_with_context(
         self,

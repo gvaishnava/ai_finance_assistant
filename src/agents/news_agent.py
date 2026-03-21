@@ -8,6 +8,7 @@ import os
 from src.agents.base_agent import BaseAgent
 from src.utils.logger import get_logger
 from src.utils.visualizers import get_news_impact_chart
+from src.utils.tracing import traceable, atraceable
 from tavily import TavilyClient
 
 logger = get_logger(__name__)

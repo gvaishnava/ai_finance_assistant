@@ -21,7 +21,9 @@ embeddings.get_embedding_client = MagicMock()
 
 from src.utils.ticker_resolver import get_ticker_resolver
 from src.agents.goal_planning_agent import GoalPlanningAgent
+import pytest
 
+@pytest.mark.asyncio
 async def test_ticker_resolution():
     print("Testing Ticker Resolution...")
     resolver = get_ticker_resolver()
@@ -38,6 +40,7 @@ async def test_ticker_resolution():
     ticker = resolver.resolve("ITC")
     print(f"Resolved 'ITC' to: {ticker}")
 
+@pytest.mark.asyncio
 async def test_goal_logic():
     print("\nTesting Goal Logic ($0 balance)...")
     

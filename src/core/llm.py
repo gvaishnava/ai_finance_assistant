@@ -26,18 +26,19 @@ class GeminiClient:
             config: Configuration dictionary
         """
         self.config = config
-        api_key = os.getenv(config["gemini"]["api_key_env"])
+        llm_config = config["llm"]["gemini"]
+        api_key = os.getenv(llm_config["api_key_env"])
 
         if not api_key:
             raise ValueError(
-                f"API key not found. Please set {config['gemini']['api_key_env']} "
+                f"API key not found. Please set {llm_config['api_key_env']} "
                 "environment variable"
             )
 
         self.client = genai.Client(api_key=api_key)
-        self.model_name = config["gemini"]["model"]
-        self.temperature = config["gemini"]["temperature"]
-        self.max_tokens = config["gemini"]["max_tokens"]
+        self.model_name = llm_config["model"]
+        self.temperature = llm_config["temperature"]
+        self.max_tokens = llm_config.get("max_tokens", 2048)
 
         logger.info(f"Initialized Gemini client with model: {self.model_name}")
 
@@ -182,6 +183,42 @@ class GeminiClient:
         return await self.agenerate(rag_prompt, system_prompt=system_prompt, temperature=temperature)
 
 
+class FallbackLLMClient:
+    """Wrapper that tries a primary client and falls back to a secondary client on failure."""
+
+    def __init__(self, primary_client, fallback_client):
+        self.primary_client = primary_client
+        self.fallback_client = fallback_client
+
+    def generate(self, prompt: str, system_prompt: Optional[str] = None, temperature: Optional[float] = None, max_tokens: Optional[int] = None) -> str:
+        try:
+            return self.primary_client.generate(prompt, system_prompt, temperature, max_tokens)
+        except Exception as e:
+            logger.warning(f"Primary LLM client failed with error: {e}. Falling back to secondary client.")
+            return self.fallback_client.generate(prompt, system_prompt, temperature, max_tokens)
+
+    def generate_with_context(self, prompt: str, context: List[str], system_prompt: Optional[str] = None, temperature: Optional[float] = None) -> str:
+        try:
+            return self.primary_client.generate_with_context(prompt, context, system_prompt, temperature)
+        except Exception as e:
+            logger.warning(f"Primary LLM client failed with error: {e}. Falling back to secondary client.")
+            return self.fallback_client.generate_with_context(prompt, context, system_prompt, temperature)
+
+    async def agenerate(self, prompt: str, system_prompt: Optional[str] = None, temperature: Optional[float] = None, max_tokens: Optional[int] = None) -> str:
+        try:
+            return await self.primary_client.agenerate(prompt, system_prompt, temperature, max_tokens)
+        except Exception as e:
+            logger.warning(f"Primary LLM async client failed with error: {e}. Falling back to secondary client.")
+            return await self.fallback_client.agenerate(prompt, system_prompt, temperature, max_tokens)
+
+    async def agenerate_with_context(self, prompt: str, context: List[str], system_prompt: Optional[str] = None, temperature: Optional[float] = None) -> str:
+        try:
+            return await self.primary_client.agenerate_with_context(prompt, context, system_prompt, temperature)
+        except Exception as e:
+            logger.warning(f"Primary LLM async client failed with error: {e}. Falling back to secondary client.")
+            return await self.fallback_client.agenerate_with_context(prompt, context, system_prompt, temperature)
+
+
 # ── Module-level singleton ────────────────────────────────────────────────────
 _llm_client = None
 
@@ -194,13 +231,29 @@ def get_llm_client(config_path: str = "config.yaml"):
         with open(config_path, "r") as f:
             config = yaml.safe_load(f)
 
-        provider = config.get("llm", {}).get("provider", "gemini")
+        llm_config = config.get("llm", {})
+        provider = llm_config.get("provider", "gemini")
+        fallback_provider = llm_config.get("fallback_provider")
 
-        if provider == "openai":
-            from src.core.openai_client import OpenAIClient
-            _llm_client = OpenAIClient(config)
+        def create_client(prov_name):
+            if prov_name == "openai":
+                from src.core.openai_client import OpenAIClient
+                return OpenAIClient(config)
+            else:
+                return GeminiClient(config)
+
+        primary = create_client(provider)
+        
+        if fallback_provider and fallback_provider != provider:
+            try:
+                fallback = create_client(fallback_provider)
+                _llm_client = FallbackLLMClient(primary, fallback)
+                logger.info(f"Initialized LLM with primary='{provider}', fallback='{fallback_provider}'")
+            except Exception as e:
+                logger.warning(f"Failed to initialize fallback provider '{fallback_provider}': {e}")
+                _llm_client = primary
         else:
-            _llm_client = GeminiClient(config)
+            _llm_client = primary
 
     return _llm_client
 

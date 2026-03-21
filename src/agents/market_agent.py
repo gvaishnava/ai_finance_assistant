@@ -9,7 +9,7 @@ from src.data.market_data import get_market_client
 from src.utils.formatters import format_currency, format_percentage
 from src.utils.logger import get_logger
 from src.utils.tracing import traceable, atraceable
-from src.utils.visualizers import get_market_history_chart
+from src.utils.visualizers import get_market_history_chart, get_market_indices_chart
 
 logger = get_logger(__name__)
 
