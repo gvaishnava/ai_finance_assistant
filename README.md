@@ -173,15 +173,35 @@ The RAG system is indexed with **14 modules of Zerodha Varsity**, covering every
 ## 🔒 Regulatory Compliance
 Automated disclaimer injection ensures all advice is framed as **educational content**, adhering to financial information regulations.
 
----
-**Version**: 1.1.0  |  **Coverage**: 80%  |  **Last Updated**: March 2026
-kersuite.google.com
+## 🛠️ Troubleshooting & Restarting
+
+### How to Restart the Application
+If the application becomes unresponsive or "restarts" automatically when you try to close it, follow these steps:
+
+1.  **Check for "QuickEdit" Mode**: If the terminal says "Select" in the title bar, press **Enter** to unfreeze it before `Ctrl+C`.
+2.  **The "Nuke" Option (Stop Everything)**:
+    If `Ctrl+C` fails or the app keeps restarting, you can force-kill all instances of Python and Node. **Warning**: This will close ALL your running Python and Node programs.
+    ```powershell
+    # Kill all Python processes (Backend)
+    taskkill /F /IM python.exe
+    
+    # Kill all Node processes (Frontend)
+    taskkill /F /IM node.exe
+    ```
+3.  **Specific Port Kill (Safer)**:
+    If you only want to kill the processes using the app's ports:
+    - **Backend (8000)**: `netstat -ano | findstr :8000` then `taskkill /F /PID <PID>`
+    - **Frontend (5173)**: `netstat -ano | findstr :5173` then `taskkill /F /PID <PID>`
+4.  **Disable Auto-Reload**:
+    If the app restarts whenever you save a file or press `Ctrl+C`, set `debug: false` in `config.yaml` to disable the `uvicorn` file watcher.
+
+### Common Issues
+- **Port 8000 already in use**: Use the "Nuke" or "Port Kill" commands above.
+- **Vector Store indexing**: This is normal on first run.
 
 ## 📞 Support
-
 For support, contact the development team or check the documentation.
 
 ---
+**Version**: 1.1.0  |  **Coverage**: 80%  |  **Last Updated**: March 2026
 
-**Version**: 1.0.0  
-**Last Updated**: January 2026

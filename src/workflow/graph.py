@@ -242,11 +242,14 @@ async def arun_workflow(
     # This prevents extracting noise from generated prompts.
     if metadata and 'stock_symbol' in metadata:
         symbols = [metadata['stock_symbol']]
-        # Force market agent if a specific stock is requested via metadata
-        if selected_agent in ['portfolio', 'finance_qa']:
-            selected_agent = 'market'
-        logger.info(f"Using metadata stock symbol: {symbols}")
+        # Force market agent if a specific stock is requested via metadata, 
+        # UNLESS the user is explicitly in the portfolio/tax tab and just asking about a stock there.
+        # If the agent is already portfolio or tax, it likely has better context for those tabs.
+        if selected_agent not in ['portfolio', 'tax', 'goal_planning']:
+             selected_agent = 'market'
+        logger.info(f"Using metadata stock symbol: {symbols}, agent: {selected_agent}")
     else:
+
         # Otherwise extract from query (natural language)
         symbols = supervisor.extract_symbols(query)
         

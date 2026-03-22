@@ -152,8 +152,10 @@ async def chat_portfolio(request: PortfolioRequest):
             query=request.message or "Analyze my portfolio",
             session_id=session.session_id,
             user_profile=session.user_profile,
-            portfolio=portfolio_data
+            portfolio=portfolio_data,
+            metadata=request.metadata
         )
+
         
         # Build response
         agent_response = result.get('agent_responses', [{}])[0]

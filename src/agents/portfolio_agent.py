@@ -71,17 +71,25 @@ class PortfolioAgent(BaseAgent):
         )
         
         # Generate educational insights
+        user_profile = context.get('user_profile', {}) # Added this line to extract user_profile from context
+        risk_tolerance = user_profile.get('risk_tolerance', 'moderate')
+        knowledge_level = user_profile.get('knowledge_level', 'intermediate')
+        
         prompt = f"""Based on this portfolio analysis, provide educational insights about diversification and risk:
-
+        
 {analysis_text}
-
+        
 User Query: {query}
-
-Focus on:
-1. Educational explanation of their current allocation
-2. General principles of diversification
-3. Concepts they should understand (sector risk, concentration risk, etc.)
-
+User Context:
+- Risk Tolerance: {risk_tolerance}
+- Knowledge Level: {knowledge_level}
+        
+Instructions:
+1. Explain their current allocation based on their {knowledge_level} knowledge level.
+2. Provide diversification insights aligned with a {risk_tolerance} risk profile.
+3. Explain concepts like sector risk or concentration risk using appropriate terminology for a {knowledge_level}.
+4. If their portfolio is too risky for a '{risk_tolerance}' profile, explain why (educationally).
+        
 Remember: Provide education, not specific investment advice."""
         
         response = self.generate_response(prompt, edu_context)
@@ -183,16 +191,25 @@ Remember: Provide education, not specific investment advice."""
         edu_context = self.retrieve_context(
             "portfolio diversification and asset allocation", top_k=3
         )
+        # Generate educational insights
+        user_profile = context.get('user_profile', {})
+        risk_tolerance = user_profile.get('risk_tolerance', 'moderate')
+        knowledge_level = user_profile.get('knowledge_level', 'intermediate')
+
         prompt = f"""Based on this portfolio analysis, provide educational insights about diversification and risk:
 
 {analysis_text}
 
 User Query: {query}
+User Context:
+- Risk Tolerance: {risk_tolerance}
+- Knowledge Level: {knowledge_level}
 
-Focus on:
-1. Educational explanation of their current allocation
-2. General principles of diversification
-3. Concepts they should understand (sector risk, concentration risk, etc.)
+Instructions:
+1. Explain their current allocation based on their {knowledge_level} knowledge level.
+2. Provide diversification insights aligned with a {risk_tolerance} risk profile.
+3. Explain concepts like sector risk or concentration risk using appropriate terminology for a {knowledge_level}.
+4. If their portfolio is too risky for a '{risk_tolerance}' profile, explain why (educationally).
 
 Remember: Provide education, not specific investment advice."""
 
@@ -206,6 +223,7 @@ Remember: Provide education, not specific investment advice."""
 
 {response_with_disclaimer}
 """
+
         # Prepare visualizations
         visualizations = []
         if allocations:

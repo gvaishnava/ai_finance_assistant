@@ -123,16 +123,22 @@ class GoalPlanningAgent(BaseAgent):
             zero_balance_note = "\nNote: You're starting at the very beginning! The first step is often the hardest, but having a clear target is half the battle."
 
         # Generate advice
+        risk_tolerance = user_profile.get('risk_tolerance', 'moderate')
+        knowledge_level = user_profile.get('knowledge_level', 'intermediate')
+        
         prompt = f"""{goal_summary}{zero_balance_note}
-
+        
 User Query: {query}
-
+User Context:
+- Risk Tolerance: {risk_tolerance}
+- Knowledge Level: {knowledge_level}
+        
 Provide educational guidance about:
-1. Strategies for achieving this type of goal (e.g., {goal.get('goal_type', 'savings')})
-2. Important concepts to understand (time value of money, compound interest, etc.)
-3. General principles for goal-based investing
-4. How to stay motivated even when starting from zero (if applicable)
-
+1. Strategies for achieving this {goal.get('goal_type', 'savings')} goal considering a {risk_tolerance} risk profile.
+2. Explain concepts ({knowledge_level} level) like time value of money, compound interest, or inflation impact.
+3. General principles for goal-based investing aligned with {risk_tolerance} tolerance.
+4. How to stay motivated even when starting from zero (if applicable).
+        
 Focus on financial education, not specific product recommendations."""
         
         response = self.generate_response(prompt, edu_context)
@@ -205,15 +211,23 @@ Focus on education and general principles."""
             top_k=5
         )
         
+        # Generate advice
+        risk_tolerance = user_profile.get('risk_tolerance', 'moderate')
+        knowledge_level = user_profile.get('knowledge_level', 'intermediate')
+        
         prompt = f"""User Query: {query}
+        User Context:
+        - Risk Tolerance: {risk_tolerance}
+        - Knowledge Level: {knowledge_level}
+        
+        Provide comprehensive education about financial goal planning:
+        1. Importance of setting financial goals for a {risk_tolerance} investor.
+        2. Types of financial goals (short-term, medium-term, long-term).
+        3. How to set SMART financial goals based on {knowledge_level} level.
+        4. Basic strategies for achieving financial goals aligned with {risk_tolerance} tolerance.
+        
+        Make it practical and actionable for {knowledge_level} level."""
 
-Provide comprehensive education about financial goal planning:
-1. Importance of setting financial goals
-2. Types of financial goals (short-term, medium-term, long-term)
-3. How to set SMART financial goals
-4. Basic strategies for achieving financial goals
-
-Make it practical and actionable for beginners."""
         
         response = self.generate_response(prompt, edu_context)
         
@@ -297,15 +311,22 @@ Make it practical and actionable for beginners."""
         if float(current_amount) <= 0:
             zero_balance_note = "\nNote: You're starting at the very beginning! The first step is often the hardest, but having a clear target is half the battle."
 
+        # Generate advice
+        risk_tolerance = user_profile.get('risk_tolerance', 'moderate')
+        knowledge_level = user_profile.get('knowledge_level', 'intermediate')
+
         prompt = f"""{goal_summary}{zero_balance_note}
 
 User Query: {query}
+User Context:
+- Risk Tolerance: {risk_tolerance}
+- Knowledge Level: {knowledge_level}
 
 Provide educational guidance about:
-1. Strategies for achieving this type of goal (e.g., {goal.get('goal_type', 'savings')})
-2. Important concepts to understand (time value of money, compound interest, etc.)
-3. General principles for goal-based investing
-4. How to start from zero and build momentum
+1. Strategies for achieving this {goal.get('goal_type', 'savings')} goal considering a {risk_tolerance} risk profile.
+2. Explain concepts ({knowledge_level} level) like time value of money, compound interest, or inflation impact.
+3. General principles for goal-based investing aligned with {risk_tolerance} tolerance.
+4. How to start from zero and build momentum.
 
 Focus on financial education, not specific recommendations."""
 
@@ -342,7 +363,24 @@ Focus on financial education, not specific recommendations."""
 
     async def _async_general_goal_planning(self, query: str, user_profile: Dict) -> Dict:
         edu_context = self.retrieve_context("financial goal setting planning SMART goals", top_k=5)
-        prompt = f"""User Query: {query}\n\nProvide comprehensive education about financial goal planning:\n1. Importance of setting financial goals\n2. Types of financial goals (short-term, medium-term, long-term)\n3. How to set SMART financial goals\n4. Basic strategies for achieving financial goals\n\nMake it practical and actionable for beginners."""
+        # Generate advice
+
+        risk_tolerance = user_profile.get('risk_tolerance', 'moderate')
+        knowledge_level = user_profile.get('knowledge_level', 'intermediate')
+
+        prompt = f"""User Query: {query}
+        User Context:
+        - Risk Tolerance: {risk_tolerance}
+        - Knowledge Level: {knowledge_level}
+
+        Provide comprehensive education about financial goal planning:
+        1. Importance of setting financial goals for a {risk_tolerance} investor.
+        2. Types of financial goals (short-term, medium-term, long-term).
+        3. How to set SMART financial goals based on {knowledge_level} level.
+        4. Basic strategies for achieving financial goals aligned with {risk_tolerance} tolerance.
+
+        Make it practical and actionable for {knowledge_level} level."""
+
         response = await self.async_generate_response(prompt, edu_context)
         return self.format_response(
             self.add_disclaimer(response, "general"),

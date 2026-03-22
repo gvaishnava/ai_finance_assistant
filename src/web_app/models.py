@@ -26,6 +26,8 @@ class PortfolioRequest(BaseModel):
     holdings: List[PortfolioHolding]
     message: Optional[str] = Field("Analyze my portfolio", description="Optional query")
     session_id: Optional[str] = None
+    metadata: Optional[Dict] = Field(None, description="Optional metadata")
+
 
 class GoalRequest(BaseModel):
     """Financial goal request"""

@@ -47,19 +47,24 @@ class TaxEducationAgent(BaseAgent):
         )
         
         # Build educational prompt
+        user_profile = context.get('user_profile', {})
+        knowledge_level = user_profile.get('knowledge_level', 'intermediate')
+        
         prompt = f"""User Query: {query}
-
-Provide educational information about tax concepts:
-1. Explain the tax concept in simple terms
-2. Use examples to illustrate
-3. Mention any relevant Indian tax regulations (as educational information)
-4. Explain implications for investors (educational only)
-
-IMPORTANT: 
-- This is general tax education only
-- Tax situations vary greatly by individual circumstances
-- Always recommend consulting a qualified tax professional for personalized advice
-- Do not provide specific tax advice or recommendations"""
+        User Context:
+        - Knowledge Level: {knowledge_level}
+        
+        Provide educational information about tax concepts:
+        1. Explain the tax concept using terminology appropriate for a {knowledge_level} level.
+        2. Use examples to illustrate.
+        3. Mention any relevant Indian tax regulations (as educational information).
+        4. Explain implications for investors (educational only).
+        
+        IMPORTANT: 
+        - This is general tax education only.
+        - Tax situations vary greatly by individual circumstances.
+        - Always recommend consulting a qualified tax professional for personalized advice.
+        - Do not provide specific tax advice or recommendations."""
         
         response = self.generate_response(prompt, edu_context)
         
@@ -100,19 +105,25 @@ The information provided here is general in nature and may not apply to your spe
 
         edu_context = self.retrieve_context(f"taxation tax {query}", top_k=5)
 
+        # Build educational prompt
+        user_profile = context.get('user_profile', {})
+        knowledge_level = user_profile.get('knowledge_level', 'intermediate')
+
         prompt = f"""User Query: {query}
+        User Context:
+        - Knowledge Level: {knowledge_level}
 
-Provide educational information about tax concepts:
-1. Explain the tax concept in simple terms
-2. Use examples to illustrate
-3. Mention any relevant Indian tax regulations (as educational information)
-4. Explain implications for investors (educational only)
+        Provide educational information about tax concepts:
+        1. Explain the tax concept using terminology appropriate for a {knowledge_level} level.
+        2. Use examples to illustrate.
+        3. Mention any relevant Indian tax regulations (as educational information).
+        4. Explain implications for investors (educational only).
 
-IMPORTANT:
-- This is general tax education only
-- Tax situations vary greatly by individual circumstances
-- Always recommend consulting a qualified tax professional for personalized advice
-- Do not provide specific tax advice or recommendations"""
+        IMPORTANT:
+        - This is general tax education only.
+        - Tax situations vary greatly by individual circumstances.
+        - Always recommend consulting a qualified tax professional for personalized advice.
+        - Do not provide specific tax advice or recommendations."""
 
         response = await self.async_generate_response(prompt, edu_context)
 
