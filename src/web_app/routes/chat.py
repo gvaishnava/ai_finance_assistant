@@ -280,7 +280,10 @@ async def get_history(session_id: str, agent: str = None, source: str = None):
         session = session_manager.get_session(session_id)
         
         if not session:
-            raise HTTPException(status_code=404, detail="Session not found")
+            return ConversationHistoryResponse(
+                session_id=session_id,
+                messages=[]
+            )
         
         # Use both filters if both provided, but source is preferred for tab-specific history
         messages = [

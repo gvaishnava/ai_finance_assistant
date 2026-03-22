@@ -1,4 +1,14 @@
+---
+title: AI Finance Assistant
+emoji: 💰
+colorFrom: indigo
+colorTo: purple
+sdk: docker
+pinned: false
+---
+
 # AI Finance Assistant
+
 
 An intelligent multi-agent financial education system powered by Google Gemini, LangGraph, and RAG (Retrieval-Augmented Generation). This system helps users learn about investing through personalized, accessible financial education.
 
