@@ -78,7 +78,7 @@ class MarketDataClient:
                         # Found valid data
                         quote = {
                             'symbol': sym,
-                            'name': info.get('longName', sym),
+                            'name': info.get('longName') or sym,
                             'price': price,
                             'change': info.get('regularMarketChange'),
                             'change_percent': info.get('regularMarketChangePercent'),
@@ -89,9 +89,9 @@ class MarketDataClient:
                             'day_low': info.get('dayLow'),
                             'fifty_two_week_high': info.get('fiftyTwoWeekHigh'),
                             'fifty_two_week_low': info.get('fiftyTwoWeekLow'),
-                            'sector': info.get('sector'),
-                            'industry': info.get('industry'),
-                            'currency': info.get('currency', 'INR'),
+                            'sector': info.get('sector') or 'N/A',
+                            'industry': info.get('industry') or 'N/A',
+                            'currency': info.get('currency') or 'INR',
                         }
                         
                         # Cache the result for the requested symbol

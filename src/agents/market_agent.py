@@ -225,7 +225,7 @@ async def _market_async_process(
                 "I couldn't find market data for the specified symbols. Please check the symbols and try again."
             )
         edu_context = self.retrieve_context(
-            f"stock analysis fundamental analysis {' '.join([s.get('sector', '') for s in stock_data])}",
+            f"stock analysis fundamental analysis {' '.join([str(s.get('sector') or '') for s in stock_data])}",
             top_k=3,
         )
         prompt = f"""{stock_summary}\n\nUser Query: {query}\n\nProvide educational insights about:\n1. Key metrics to understand for these stocks\n2. What the data tells us (educational perspective)\n3. Concepts beginners should know when analyzing stocks\n\nFocus on education about stock analysis, not buy/sell recommendations."""

@@ -46,19 +46,33 @@ class SupervisorAgent:
         
         Args:
             query: User query
-            context: Optional context (portfolio, goals, etc.)
+            context: Optional context (portfolio, goals, user_profile, source)
             
         Returns:
             Agent name to handle the query
         """
-        # Use keyword-based routing first (fast)
+        # 1. Source-based prioritization (highest priority)
+        source = (context or {}).get('source')
+        if source in ['portfolio', 'goal_planning', 'tax', 'news']:
+             # If we are in a specialist tab, and the query is very short or empty, 
+             # stick to that specialist agent.
+             if len(query.split()) < 3:
+                 return source
+
+        # 2. Keyword-based routing
         keyword_agent = self._keyword_based_routing(query, context)
         
         if keyword_agent:
+            # If keyword points to market but we are in the 'chat' tab, 
+            # and it's a general question, let LLM decide instead of forcing market.
+            if keyword_agent == 'market' and source == 'chat':
+                 if any(word in query.lower() for word in ['what is', 'explain', 'how to', 'basics']):
+                      return self._llm_based_routing(query)
+            
             logger.info(f"Keyword routing: {keyword_agent}")
             return keyword_agent
         
-        # Fall back to LLM-based routing for complex queries
+        # 3. LLM-based routing (fallback)
         return self._llm_based_routing(query)
     
     def _keyword_based_routing(self, query: str, context: Dict = None) -> str:
@@ -70,9 +84,12 @@ class SupervisorAgent:
         if any(word in query_lower for word in ['portfolio', 'holdings', 'my stocks', 'my investments']):
             return 'portfolio'
         
-        # Market-related keywords
-        if any(word in query_lower for word in ['market', 'stock price', 'stock', 'price', 'nifty', 'sensex', 'index', 'ticker']):
+        # Market-related keywords - make 'stock' and 'price' less aggressive
+        # Only route to market if it's specifically about prices, tickers or indices
+        if any(word in query_lower for word in ['stock price', 'nifty', 'sensex', 'index', 'ticker', 'trading at']):
             return 'market'
+        
+        # General 'stock' or 'market' without 'price' should go to LLM or QA
         
         # Goal planning keywords
         if any(word in query_lower for word in ['goal', 'planning', 'retirement', 'save for', 'target']):

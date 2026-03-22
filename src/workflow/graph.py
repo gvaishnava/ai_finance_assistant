@@ -231,6 +231,7 @@ async def arun_workflow(
         'portfolio': portfolio,
         'goals': goals,
         'user_profile': user_profile or {},
+        'source': metadata.get('source') if metadata else None,
     }
     selected_agent = await asyncio.get_event_loop().run_in_executor(
         None,
