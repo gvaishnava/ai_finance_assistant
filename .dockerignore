@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Node
+frontend/node_modules/
+frontend/dist/
+.npm
+frontend/.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project
+.git/
+.vscode/
+.gemini/
+tests/
+scripts/test_*.py
+*.rar

@@ -73,11 +73,18 @@ def main():
     with open("config.yaml", "r") as f:
         config = yaml.safe_load(f)
 
-    host  = config["app"]["host"]
-    port  = config["app"]["port"]
+    import os
+    host = os.getenv("HOST", config["app"]["host"])
+    port = int(os.getenv("PORT", config["app"]["port"]))
     debug = config["app"]["debug"]
 
+    # Hugging Face Spaces specific port override
+    if os.getenv("SPACE_ID"):
+        port = 7860
+        host = "0.0.0.0"
+
     logger.info(f"Starting server on {host}:{port}")
+
 
     uvicorn.run(
         "src.web_app.api:app",
